@@ -1,0 +1,22 @@
+.main-footer{
+    display :flex ;
+    flex-direction: column;
+    gap: 0.3rem;
+    border: 1px solid gray ;;
+    /* width: 90%; */
+    /* margin-left: auto ;
+    margin-right: auto ; */
+}
+.main-footer div {
+    font-size: 1.3rem;
+    padding: 1rem;
+    /* border: 1px solid gray; */
+}
+.main-footer-lang {
+
+}
+.main-footer-lang {
+    border-bottom: 1px solid gray;
+    
+
+}

@@ -1,0 +1,21 @@
+
+input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+
+}
+.main-input-first, .main-input-last, .main-input-phone, .main-input-password, .main-input-email, .main-input-please, .main-input-enter, .main-input-re-enter{
+    display: flex ;
+}
+.main-input-phone {
+    width: 85%;
+}
+
+
+
+
+
+/* .sign-in-button {
+    height: 4vh;
+} */

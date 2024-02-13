@@ -1,0 +1,12 @@
+.main-logo{ 
+    background-color: rgb(70, 4, 133);
+    align-self: center;
+    font-size: 2rem;
+    padding-left:2rem ;
+    padding-right: 2rem;
+    padding-top: 1rem ;
+    padding-bottom:1rem;
+    color: white ;
+    margin-bottom: 1rem;
+    clip-path: polygon(1% 16%, 100% 4%, 90% 98%, 15% 82%, 0% 99%, 5% 70%);
+}

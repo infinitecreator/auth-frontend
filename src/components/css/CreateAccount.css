@@ -1,0 +1,12 @@
+.main-create-account{
+    margin-bottom: 0.7rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto ;
+    display: flex ;
+    gap: 0.3rem ;
+    justify-content: center;
+}
+
+
+

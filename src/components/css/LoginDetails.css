@@ -1,0 +1,23 @@
+.main-login-details {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.4rem;
+    width : 90% ;
+    margin-left: auto ;
+    margin-right: auto ;
+    gap: 0.4rem;
+}
+.main-login-details-checkbox-container{
+    display: flex;
+    justify-content: space-between;
+    /* width: 90%; */
+    /* margin: auto ; */
+}
+.main-login-details-checkbox-container a {
+    font-size: 1.1rem;
+}
+.sign-in-button {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}

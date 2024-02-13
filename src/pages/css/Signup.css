@@ -1,0 +1,16 @@
+.main-signup {
+    padding-top: 3rem;
+    /* padding-bottom: 2rem; */
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(250, 245, 245);
+}
+
+@media (max-width: 800px) {
+    .main-signup{
+        width: 100vw;
+        height: 100vh;
+    }
+}

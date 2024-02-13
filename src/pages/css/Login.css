@@ -1,0 +1,34 @@
+.main-login-page {
+    display : flex ;
+    margin :auto ;
+    width : 500px ;
+    /* height: 100vh; */
+    flex-direction: column;
+    padding-top:1.5rem;
+    padding-bottom: 1.5rem;
+    /* justify-content: space-between; */
+    /* gap:1rem; */
+    background-color: rgb(230, 243, 254);
+    background-size: cover ;
+}
+
+.main-guest-purchase {
+    width: 90% ;
+    margin-left: auto ;
+    margin-right: auto ;
+    
+}
+.main-guest-purchase button{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    /* height: 3rem; */
+    margin-bottom: 0.7rem;
+}
+
+@media (max-width: 800px) {
+    .main-login-page{
+        width: 100vw;
+        height: 100vh;
+    }
+}

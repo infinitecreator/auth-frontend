@@ -1,0 +1,23 @@
+.main-redirect{
+    width: 100%;
+    margin-left :auto ;
+    margin-right:auto ;
+    display: flex ;
+    flex-direction: column;
+    background-color: rgb(241, 243, 245);
+    padding-top: 2.5rem;
+}
+.main-redirect button {
+    width: 200px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    align-self: center;
+}
+
+@media (max-width: 800px) {
+    .main-redirect{
+        width: 100vw;
+        height: 100vh;
+    }
+}

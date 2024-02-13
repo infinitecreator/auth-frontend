@@ -1,0 +1,13 @@
+.gray-text-main {
+    color : rgb(113, 113, 113);
+    font-size:2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    align-self: center;
+}
+/* @media (max-width:500px){
+    .gray-text-main{
+       display: flex ;
+       justify-content: center;
+    }
+} */
