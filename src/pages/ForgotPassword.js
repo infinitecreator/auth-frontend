@@ -14,7 +14,7 @@ export default function ForgotPassword(){
     const {navigate} = useNavigation() ;
 
     useEffect(()=>{
-        
+
         
         fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/currentuser`,{ credentials: 'include' })
         .then((res) => {

@@ -28,7 +28,7 @@ export default function VerifyOTP(){
         //     await validaterequest() ;
         // }
         // console.log(res) ;
-        fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/currentotpuser`,{ credentials: 'include' })
+        fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/currentotpuser`,{ credentials: 'include'})
         .then((res) => {
             if (res.status === 200) {
                 setShowComponent(true)
