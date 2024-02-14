@@ -17,7 +17,7 @@ import Link from "../Link";
     const successMessage = "Password updated successfully, redirecting to the login page" ;
 
     const [updatePasswordRequest, errors] = useRequest({
-        url: 'http://localhost:4000/api/users/update',
+        url: `{process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/update`,
         method: 'patch',
         body:{
             password: updatedPassword,

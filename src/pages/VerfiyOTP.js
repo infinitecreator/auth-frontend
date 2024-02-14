@@ -13,7 +13,7 @@ const forgotDesc = "Please create your new password below";
 export default function VerifyOTP(){
     const [showComponent, setShowComponent] = useState(false) ;
     // const [validaterequest, errors] = useRequest({
-    //     url: 'http://localhost:4000/api/users/currentuser',
+    //     url: '${process.env.PROTOCOL}://${process.env.BACKEND_URL}{process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/currentuser',
     //     method:'get',
     //     body:{},
     //     onSuccess: ()=>{
@@ -28,7 +28,7 @@ export default function VerifyOTP(){
         //     await validaterequest() ;
         // }
         // console.log(res) ;
-        fetch("http://localhost:4000/api/users/currentotpuser",{ credentials: 'include' })
+        fetch(`{process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/currentotpuser`,{ credentials: 'include' })
         .then((res) => {
             if (res.status === 200) {
                 setShowComponent(true)

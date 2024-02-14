@@ -1,8 +1,8 @@
 import useRequest from "../hooks/use-request";
 import "./css/SocialLogin.css" ;
-const GOOGLE_AUTH = "http://localhost:4000/auth/google/" ;
-const APPLE_AUTH = "http:localhost:4000/auth/apple/" ;
-const FACEBOOK_AUTH = "http://localhost:4000/auth/facebook/" ;
+const GOOGLE_AUTH = `${process.env.PROTOCOL}://${process.env.BACKEND_URL}/auth/google/` ;
+const APPLE_AUTH = `${process.env.PROTOCOL}://${process.env.BACKEND_URL}/auth/apple/` ;
+const FACEBOOK_AUTH = `${process.env.PROTOCOL}://${process.env.BACKEND_URL}/auth/facebook/` ;
 
 const urlOBJ = {
     'google': GOOGLE_AUTH,
@@ -12,7 +12,7 @@ const urlOBJ = {
 export default function SocialLogin({auth,bcolor, text, img}){
 
     const [googleLogin, errors] = useRequest({
-        url:'http://localhost:4000/auth/google/',
+        url:`${process.env.PROTOCOL}://${process.env.BACKEND_URL}/auth/google/`,
         method:'get',
         body:{
 

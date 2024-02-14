@@ -15,7 +15,7 @@ export default function CreateAccountForm(){
     const [mobile, setMobile] = useState('') ;
     const [successSignup, setSuccessSignup] = useState(false) ;
     const [ doRequest, errors ] = useRequest({
-        url: 'http://localhost:4000/api/users/signup',
+        url: `{process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/signup`,
         method: 'post',
         body: {
             email: email,
