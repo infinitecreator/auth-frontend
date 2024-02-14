@@ -1,4 +1,6 @@
 // import './App.css';
+// import dotenv from 'dotenv';
+// import dotenvExpand from 'dotenv-expand' ;
 import Routes from "./components/Route";
 import Login from './pages/Login' ;
 import Signup from './pages/Signup';
@@ -9,6 +11,8 @@ import AccountVerified from "./pages/AccountVerified.js";
 import HomePage from "./pages/HomePage.js";
 import Redirect from "./components/common/Redirect.js";
 import "./App.css" ;
+
+// dotenvExpand(dotenv.config());
 
 
 function App() {

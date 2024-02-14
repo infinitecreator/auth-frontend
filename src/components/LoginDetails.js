@@ -14,7 +14,7 @@ export default function LoginDetails({fields, buttonText}){
 
     
     const [doRequest, errors ] = useRequest({
-        url: `${process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/signin`,
+        url: `${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/signin`,
         method: 'post',
         body: {
             email: email,

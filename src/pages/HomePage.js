@@ -11,7 +11,7 @@ const HomePage = ()=>{
     const [showComponent, setShowComponent] = useState(false) ;
     const {navigate} = useNavigation()  ;
     const [logOutApi, errors] = useRequest({
-        url: `{process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/signout`,
+        url: `${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/signout`,
         method:'post',
         body:{
 
@@ -41,7 +41,7 @@ const HomePage = ()=>{
     useEffect(()=>{
        
 
-        fetch(`{process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/currentuser`,{ credentials: 'include' })
+        fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/currentuser`,{ credentials: 'include' })
         .then((res) => {
             if (res.status === 200) {
                 setShowComponent(true)

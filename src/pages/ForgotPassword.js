@@ -15,7 +15,7 @@ export default function ForgotPassword(){
 
     useEffect(()=>{
         
-        fetch(`{process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/currentuser`,{ credentials: 'include' })
+        fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/currentuser`,{ credentials: 'include' })
         .then((res) => {
             if (res.status === 200) {
                 setShowComponent(false) ;

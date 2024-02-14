@@ -20,7 +20,7 @@ export default function ForgotPasswordForm() {
     const buttonText = `${optCount>=1 ? 'Resend' : 'Send'} OTP` ;
 
     // const { doRequest, errors } = useRequest({
-    //     url: '${process.env.PROTOCOL}://${process.env.BACKEND_URL}{process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/forgotpassword',
+    //     url: '${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}{process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/forgotpassword',
     //     method: 'post',
     //     body: {
     //         email: eemail,
@@ -31,7 +31,7 @@ export default function ForgotPasswordForm() {
     //     // }
     // }) ;
     const [verifyOtp, errOtp] = useRequest({
-        url: `${process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/verifyotp`,
+        url: `${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/verifyotp`,
         method: 'post',
         body: {
             email: eemail,
@@ -45,7 +45,7 @@ export default function ForgotPasswordForm() {
     })
 
     const [doRequest, errors ] = useRequest({
-        url: `{process.env.PROTOCOL}://${process.env.BACKEND_URL}/api/users/forgotpassword`,
+        url: `${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/forgotpassword`,
         method: 'post',
         body: {
             email: eemail,
