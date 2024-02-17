@@ -4,11 +4,12 @@ import useNavigation from "../hooks/use-navigation";
 import Logo from "../components/Logo";
 import GrayText from "../components/common/GrayText";
 import "./css/HomePage.css" ;
+import Loading from "../components/common/Loading";
 
-const logoutMessage = "Successfully logged out, redirecting you to the login page"
+// const logoutMessage = "Successfully logged out, redirecting you to the login page"
 
 const HomePage = ()=>{
-    const [showComponent, setShowComponent] = useState(false) ;
+    const [showComponent, setShowComponent] = useState(0) ;
     const {navigate} = useNavigation()  ;
     const [logOutApi, errors] = useRequest({
         url: `${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/signout`,
@@ -44,28 +45,39 @@ const HomePage = ()=>{
         fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/currentuser`,{ credentials: 'include'})
         .then((res) => {
             if (res.status === 200) {
-                setShowComponent(true)
+                setShowComponent(1)
             } else {
-                setShowComponent(false)
+                setShowComponent(2)
             }
-        });
+        }).
+        catch((err)=>{
+            console.log(err) ;
         
-    }) ;
+        }) ;
+
+});
 
     return (
         <>
-            {   showComponent && 
-                <div className="main-homepage">
+            {   showComponent === 1 ? 
+                ( <div className="main-homepage">
                     <Logo text = "StubHub"/>
                     <GrayText text = "Homepage"/>
                     <button onClick = {handleLogOut}>Sign Out</button>
 
-                </div>
+                </div> ) : 
+                showComponent === 2 ? 
+                (
+                    <h1 style={{display: 'flex', justifyContent: 'center'}}>Not Allowed</h1>
+                ) :
+                (
+                    <Loading text = "Loading..."/>
+                )
                 
             }
             {errors}   
 
-            <h1 style={{display: 'flex', justifyContent: 'center'}}>{!showComponent && 'Not Allowed'}</h1>
+            
         </>
     )
 }

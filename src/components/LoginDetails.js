@@ -9,6 +9,7 @@ import useNavigation from "../hooks/use-navigation";
 export default function LoginDetails({fields, buttonText}){
     const [email, setEmail] = useState('') ;
     const [password, setPassword] = useState('') ;
+    const [isGreyedOut, setIsGreyedOut] = useState(false) ;
     const { navigate } = useNavigation() ;
     
 
@@ -21,6 +22,7 @@ export default function LoginDetails({fields, buttonText}){
             password: password
         },  
         onSuccess: () => {
+            
             navigate('/homepage') ;
         }
     });
@@ -31,14 +33,17 @@ export default function LoginDetails({fields, buttonText}){
 
         
         try {
+            setIsGreyedOut(true) ;
             
         setEmail( event.target.email.value.trim()) ;
         setPassword(event.target.password.value.trim()) ;
         
         // console.log('wow') ;
         await doRequest() ;
+        setIsGreyedOut(false) ;
 
         }catch(err){
+            setIsGreyedOut(false) ;
             console.log(err) ;
         }
         
@@ -60,7 +65,7 @@ export default function LoginDetails({fields, buttonText}){
             </div>
             {errors}
 
-            <button className="sign-in-button">Sign In</button>
+            <button disabled = {isGreyedOut} className="sign-in-button">{isGreyedOut ? "Signing in" : "Sign In"}</button>
             
             </form>
     )
