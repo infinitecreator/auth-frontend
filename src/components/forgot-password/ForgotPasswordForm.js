@@ -119,14 +119,14 @@ export default function ForgotPasswordForm() {
         <form onSubmit = {submitForm} className="main-forgot-password-form">
             <Input onChange = {setEEmail} disabled = {!visButton ? true : false} inputText="Email"/>
             { optCount > 0 && <Input onChange = {setOTP} not_required inputText="Please enter your OTP"/> }
-            <div>
+            <div className="otp-text">
                 {(optCount > 0 && !visButton) && otpText}
 
             </div>
             {errors}
             {errOtp}
-            <div>
-                {!visButton && `resend otp in ${minutes}:${seconds}`}
+            <div className="resend-otp">
+                {!visButton && `Resend OTP in ${minutes}:${seconds}`}
             </div>
             {optCount > 0 && <button value = "submit" name = 'submit' className="submit-button">Submit OTP </button> }
             

@@ -3,7 +3,7 @@ import Link from "./Link";
 export default function CreateAccount({textLeft, textRight, label, to}){
     return (
         <div className="main-create-account">
-            <div>
+            <div className="main-create-account-text">
                 {/* New to AuthHub ? */}
                 {textLeft}
             </div>

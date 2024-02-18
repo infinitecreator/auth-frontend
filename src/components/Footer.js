@@ -6,7 +6,7 @@ export default function Footer(){
                 English (US)
             </div>
             <div className="main-footer-currency">
-                Indian rupee
+                Rs. Indian Rupee
             </div>
         </div>
     )

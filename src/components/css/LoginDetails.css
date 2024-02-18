@@ -20,4 +20,7 @@
     padding: 0.5rem 1rem;
     margin-top: 1rem;
     font-size: 1.1rem;
+    border-radius: 20px ;
+    background-color: rgb(60, 0, 128);
+    border: 2px solid black ;
 }

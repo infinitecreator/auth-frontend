@@ -18,7 +18,7 @@ export default  function useRequest({ url, method, body, onSuccess }){
     } catch (err) {
       console.log(err) ;
       setErrors(
-        <div className="alert alert-danger">
+        <div className="alert alert-danger bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
           <h4>Ooops....</h4>
           
           <ul className="my-0">

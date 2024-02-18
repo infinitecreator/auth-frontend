@@ -13,6 +13,10 @@
         padding: 0.5rem 1rem;
         margin-top: 1rem;
         font-size: 1.1rem;
+        /* border: 2px solid rgb(0, 0, 0); */
+        color: white ;
+        background-color: rgb(43, 0, 107);
+        border-radius: 20px ;
 }
 
 .main-create-account-form-phone-number {
@@ -21,7 +25,10 @@
 
 }
 .cc {
+    border: 2px solid rgb(156, 156, 156);
+    border-radius:5px ;
+    padding-left:0.4rem;
     width: 15%;
-    display: flex ;
-    justify-content: center;
+    /* display: flex ; */
+    /* justify-content: center; */
 }

@@ -68,7 +68,7 @@ const HomePage = ()=>{
                 </div> ) : 
                 showComponent === 2 ? 
                 (
-                    <h1 style={{display: 'flex', justifyContent: 'center'}}>Not Allowed</h1>
+                    <h1 style={{display: 'flex', justifyContent: 'center', fontSize:'larger'}}>Not Allowed</h1>
                 ) :
                 (
                     <Loading text = "Loading..."/>

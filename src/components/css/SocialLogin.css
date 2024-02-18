@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+    border-radius: 100px ;
     /* padding: 1rem; */
     /* z-index: 1; */
     /* height: 4vh; */
@@ -35,6 +36,9 @@
     justify-content: center;
     gap: 1rem;
     font-size: 1rem;
+    border-radius: 50px ;
+    border: 2px solid rgb(1, 1, 1) ;
+    
 }
 .mscli-text{
     display: flex;

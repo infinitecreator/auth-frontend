@@ -65,7 +65,7 @@ export default function LoginDetails({fields, buttonText}){
             </div>
             {errors}
 
-            <button disabled = {isGreyedOut} className="sign-in-button">{isGreyedOut ? "Signing in" : "Sign In"}</button>
+            <button disabled = {isGreyedOut} style = {isGreyedOut ? { color: 'gray' } : {color:'white'}} className="sign-in-button">{isGreyedOut ? "Signing in" : "Sign In"}</button>
             
             </form>
     )

@@ -3,6 +3,10 @@ input {
     width: 100%;
     padding: 1rem;
     font-size: 1.1rem;
+    border-radius: 5px ;
+    /* border-color: white; */
+    border-width: 1px;
+    border: 2px solid rgb(153, 153, 153) ;
 
 }
 .main-input-first, .main-input-last, .main-input-phone, .main-input-password, .main-input-email, .main-input-please, .main-input-enter, .main-input-re-enter{

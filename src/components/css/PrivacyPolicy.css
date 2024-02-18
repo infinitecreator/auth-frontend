@@ -3,6 +3,8 @@
     width: 90%;
     margin-left: auto ;
     margin-right: auto ;
+    font-size: large;
+    color: rgb(102, 102, 102)
     /* align-self: center; */
 
 }

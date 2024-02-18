@@ -1,4 +1,15 @@
 .returna{
     display: flex;
     justify-content: center;
+    font-size: larger;
+}
+.accounta{
+    font-size: larger;
+}
+.ina{
+    font-size: large;
+}
+.Passworda {
+    font-size: larger;
+
 }

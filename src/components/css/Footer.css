@@ -17,6 +17,10 @@
 }
 .main-footer-lang {
     border-bottom: 1px solid gray;
+    color: rgb(102, 102, 102);
     
 
+}
+.main-footer-currency {
+    color: rgb(109, 109, 109)
 }
