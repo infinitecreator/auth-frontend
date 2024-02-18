@@ -18,15 +18,19 @@ import "./App.css" ;
 function App() {
   return (
     <div className="main-app">
+      <Routes to = '/coming-soon'>
+        <Redirect buttonText = 'Back to Sign in' buttonUrl = '/login' greyText = "Coming Soon" />
+      </Routes>
+
       <Routes to = '/logout'>
-        <Redirect type = 'logout' text = "Successfully logged out. Redirecting you to login page...." />
+        <Redirect greyText = "Successfully logged out. Redirecting you to login page...." />
       </Routes>
 
       <Routes to = '/homepage'>
         <HomePage/>
       </Routes>
       <Routes to = '/'>
-        <Redirect type = 'landing' text = "welcome to StubHub"/>
+        <Redirect buttonText='Sign in' buttonUrl='/login' greyText = "Welcome to AuthHub"/>
       </Routes>
 
       <Routes to = '/login'>

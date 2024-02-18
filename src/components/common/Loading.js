@@ -8,7 +8,7 @@ export default function Loading({text}) {
     return (
        
             <div className="main-redirect">
-                <Logo text = "StubHub"/>
+                <Logo text = "AuthHub"/>
                 <GrayText text={text}/>
                 {/* <h1>Loading...</h1> */}
 

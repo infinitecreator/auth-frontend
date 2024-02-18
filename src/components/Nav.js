@@ -10,6 +10,7 @@ const Nav = ({children}) => {
         { label: 'ForgotPassword', to: '/forgot-password' },
         { label: 'VerifyOTP', to: '/verify-otp' },
         { label: 'AccountVerified', to:'/account-verified'},
+        { label: 'ComingSoon', to:'/coming-soon'}
         // { label: 'Counter', to: '/counter'},
         // { label: 'Playlist', to: '/playlist'},
     ];

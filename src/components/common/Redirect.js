@@ -4,7 +4,7 @@ import GrayText from "./GrayText";
 import "./Redirect.css" ;
 import { useEffect, useState } from "react";
 
-export default function Redirect({type,text}){
+export default function Redirect({buttonText, buttonUrl, greyText}){
     const [showComponent, setShowComponent] = useState(false) ;
     const {navigate} = useNavigation() ;
     useEffect(()=>{
@@ -21,7 +21,9 @@ export default function Redirect({type,text}){
         
     }) ; 
     const handleSignin =() =>{
-        navigate('/login') ;
+        console.log('clicked') ;
+        // console.log(buttonUrl) ;
+        navigate(buttonUrl) ;
 
 
     }
@@ -29,9 +31,9 @@ export default function Redirect({type,text}){
         <>
         { showComponent &&
             <div className="main-redirect">
-                <Logo text = "StubHub"/>
-                <GrayText text={text}/>
-                {type ==='landing' && <button  onClick = {handleSignin}>Sign in</button>}
+                <Logo text = "AuthHub"/>
+                <GrayText text={greyText}/>
+                {buttonText && <button  onClick = {handleSignin}>{buttonText}</button>}
 
                 {/* <h1>{text}</h1> */}
 

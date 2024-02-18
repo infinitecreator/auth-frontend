@@ -4,7 +4,7 @@ export default function CreateAccount({textLeft, textRight, label, to}){
     return (
         <div className="main-create-account">
             <div>
-                {/* New to StubHub? */}
+                {/* New to AuthHub ? */}
                 {textLeft}
             </div>
             <Link

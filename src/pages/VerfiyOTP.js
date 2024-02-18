@@ -43,7 +43,7 @@ export default function VerifyOTP(){
         <>
         {showComponent && 
             <div className="main-verify-otp">
-                <Logo text = "StubHub"/>
+                <Logo text = "AuthHub"/>
                 <GrayText text = "Reset your password"/>
                 <LongText text = {forgotDesc}/>
                 <ResetPassword/>

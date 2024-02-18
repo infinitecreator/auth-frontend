@@ -33,7 +33,7 @@ export default function ForgotPassword(){
         <>
             { showComponent && 
                 <div className="main-forgot-password">
-                    <Logo text = "StubHub"/>
+                    <Logo text = "AuthHub"/>
                     <GrayText text = "Forgot Password"/>
                     <LongText text = {forgotDesc}/>
                     <ForgotPasswordForm/>

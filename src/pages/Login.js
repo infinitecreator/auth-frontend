@@ -32,21 +32,28 @@ function Login() {
       
   }) ; 
 
+
+  const handleGuestPurchase = (event) =>{
+    event.preventDefault() ;
+    navigate('/coming-soon') ;
+
+  }
+
   return (
     <>
         { showComponent && 
             <div className='main-login-page'>
-              <Logo text = "StubHub"/>
-              <GrayText text = "Sign in to StubHub"/>
+              <Logo text = "AuthHub"/>
+              <GrayText text = "Sign in to AuthHub"/>
               <LoginDetails fields = {loginFields} />
               <PrivacyPolicy ppText = {ppText}/>
               <div className='main-guest-purchase'>
-                <button>Guest purchase? Find your order</button>
+                <button onClick = {handleGuestPurchase}>Guest purchase? Find your order</button>
               </div>
               <SocialForLogin/>
               
 
-              <CreateAccount textLeft="New to StubHub?" textRight = "Create account" to = "/signup" />
+              <CreateAccount textLeft="New to AuthHub?" textRight = "Create account" to = "/signup" />
               <Footer/>
             </div>
         }

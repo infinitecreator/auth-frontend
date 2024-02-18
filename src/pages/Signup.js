@@ -33,11 +33,11 @@ export default function Signup(){
         <>
             { showComponent && 
                 <div className='main-signup'>
-                    <Logo text = "StubHub"/>
+                    <Logo text = "AuthHub"/>
                     <GrayText text="Create Account"/>
                     <CreateAccountFrom/>
                     <PrivacyPolicy ppText={ppText}/>
-                    <CreateAccount textLeft="Have a StubHub account?" textRight = "Sign in" label = "Sign in" to = "/login" />
+                    <CreateAccount textLeft="Have a AuthHub account?" textRight = "Sign in" label = "Sign in" to = "/login" />
                     <Footer/>
 
                 </div>

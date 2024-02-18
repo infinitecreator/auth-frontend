@@ -61,7 +61,7 @@ const HomePage = ()=>{
         <>
             {   showComponent === 1 ? 
                 ( <div className="main-homepage">
-                    <Logo text = "StubHub"/>
+                    <Logo text = "AuthHub"/>
                     <GrayText text = "Homepage"/>
                     <button onClick = {handleLogOut}>Sign Out</button>
 
