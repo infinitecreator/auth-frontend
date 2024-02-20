@@ -57,7 +57,7 @@ export default function LoginDetails({fields, buttonText}){
             <form onSubmit = {handleSubmit} className="main-login-details">
             { 
                 fields.map((field)=>{
-                return <Input type = 'password' onChange={field==='Email' ? setEmail: setPassword} inputText = {field} />})
+                return <Input type = {field==='Password' && 'password'} onChange={field==='Email' ? setEmail: setPassword} inputText = {field} />})
             }
             <div className="main-login-details-checkbox-container">
                 <Checkbox checkboxText="Stay logged in"/>

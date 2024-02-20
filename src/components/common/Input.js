@@ -5,7 +5,7 @@ export default function Input({ type, onChange, disabled, not_required, inputTex
     // const disabledd = disabled ? true : false 
     return (
         <div className= { `main-input-${inputText.toLowerCase()}`} >
-            <input onChange = { (e)=> onChange(e.target.value) } disabled = {disabled} type = {type} placeholder = {inputText} required = {inputNeeded} name = {inputText.toLowerCase()}/>
+            <input onChange = { (e)=> onChange(e.target.value) } disabled = {disabled} type = {type ? type :''} placeholder = {inputText} required = {inputNeeded} name = {inputText.toLowerCase()}/>
         </div>
     )
 }

@@ -74,7 +74,7 @@ export default function CreateAccountForm(){
                 <Input onChange = {setMobile} inputText="Phone Number" />
             </div>
 
-            <Input onChange = {setPassword} inputText="Password"/>
+            <Input type = 'password' onChange = {setPassword} inputText="Password"/>
             {successSignup && successSignupText}
             {errors}
             <button disabled = {isGreyedOut} style = {isGreyedOut ? { color: 'gray' } : {color:'white'}} className="main-create-account-form-button">{isGreyedOut ? "Working on it..." : "Create Account"}</button>
