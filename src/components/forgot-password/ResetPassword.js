@@ -15,7 +15,7 @@ import Link from "../Link";
     const [lengthError, setLengthError] = useState(false) ;
     const [isGreyedOut, setIsGreyedOut] = useState(false) ;
     const[flagSuccessUpdate, setFlagSuccessUpdate] = useState(false) ;
-    const successMessage = "Password updated successfully, redirecting to the login page" ;
+    const successMessage = "Password updated successfully, taking you to the appropriate page... " ;
 
     const [updatePasswordRequest, errors] = useRequest({
         url: `${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/update`,
