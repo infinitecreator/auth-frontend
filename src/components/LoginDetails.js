@@ -57,7 +57,7 @@ export default function LoginDetails({fields, buttonText}){
             <form onSubmit = {handleSubmit} className="main-login-details">
             { 
                 fields.map((field)=>{
-                return <Input onChange={field==='Email' ? setEmail: setPassword} inputText = {field} />})
+                return <Input type = 'password' onChange={field==='Email' ? setEmail: setPassword} inputText = {field} />})
             }
             <div className="main-login-details-checkbox-container">
                 <Checkbox checkboxText="Stay logged in"/>
@@ -65,7 +65,7 @@ export default function LoginDetails({fields, buttonText}){
             </div>
             {errors}
 
-            <button disabled = {isGreyedOut} style = {isGreyedOut ? { color: 'gray' } : {color:'white'}} className="sign-in-button">{isGreyedOut ? "Signing in" : "Sign In"}</button>
+            <button disabled = {isGreyedOut} style = {isGreyedOut ? { color: 'gray' } : {color:'white'}} className="sign-in-button">{isGreyedOut ? "Signing in..." : "Sign In"}</button>
             
             </form>
     )

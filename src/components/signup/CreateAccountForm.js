@@ -14,6 +14,7 @@ export default function CreateAccountForm(){
     const [password, setPassword] = useState('') ;
     const [mobile, setMobile] = useState('') ;
     const [successSignup, setSuccessSignup] = useState(false) ;
+    const [isGreyedOut, setIsGreyedOut] = useState(false) ;
     const [ doRequest, errors ] = useRequest({
         url: `${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_BACKEND_URL}/api/users/signup`,
         method: 'post',
@@ -37,6 +38,7 @@ export default function CreateAccountForm(){
     const handleSubmit = async (event) =>{
         event.preventDefault();
         try{
+            setIsGreyedOut(true) ;
             setFirstName(event.target['first name'].value.trim());
             setLastName(event.target['last name'].value.trim())
             setEmail(event.target['email'].value.trim()) ;
@@ -44,8 +46,10 @@ export default function CreateAccountForm(){
             setMobile(event.target['phone number'].value.trim()) ;
             // console.log(event.target.cc_dropdown.value) ;
             await doRequest() ;
+            setIsGreyedOut(false) ;
 
         } catch(err){
+            setIsGreyedOut(false) ;
             console.log(err) ;
 
         }
@@ -73,7 +77,7 @@ export default function CreateAccountForm(){
             <Input onChange = {setPassword} inputText="Password"/>
             {successSignup && successSignupText}
             {errors}
-            <button className="main-create-account-form-button">Create Account</button>
+            <button disabled = {isGreyedOut} style = {isGreyedOut ? { color: 'gray' } : {color:'white'}} className="main-create-account-form-button">{isGreyedOut ? "Working on it..." : "Create Account"}</button>
         </form>
     )
 }

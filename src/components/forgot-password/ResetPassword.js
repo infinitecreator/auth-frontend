@@ -13,6 +13,7 @@ import Link from "../Link";
     const [reUpdatedPassword, setReUpdatedPassword] = useState('') ;
     const [notMatchedError, setNotMatchedError] = useState(false) ;
     const [lengthError, setLengthError] = useState(false) ;
+    const [isGreyedOut, setIsGreyedOut] = useState(false) ;
     const[flagSuccessUpdate, setFlagSuccessUpdate] = useState(false) ;
     const successMessage = "Password updated successfully, redirecting to the login page" ;
 
@@ -35,6 +36,7 @@ import Link from "../Link";
     const submitHandler = async (event)=>{
         event.preventDefault() ;
         try{
+            setIsGreyedOut(true) ;
             setNotMatchedError(false) ;
             setLengthError(false) ;
 
@@ -47,6 +49,7 @@ import Link from "../Link";
                 
 
                 const data = await updatePasswordRequest() ;
+                setIsGreyedOut(false) ;
                 console.log(data,' data ') ;
 
 
@@ -56,6 +59,7 @@ import Link from "../Link";
             else setNotMatchedError(true) ;
 
         } catch(err) {
+            setIsGreyedOut(false) ;
             console.log(err) ;
         }
 
@@ -64,13 +68,13 @@ import Link from "../Link";
 
     return (
         <form onSubmit = {submitHandler} className="main-reset-password">
-            <Input onChange = {setUpdatedPassword} name = "newPass" inputText="Enter New Password"/>
-            <Input onChange = {setReUpdatedPassword} name = "reNewPass" inputText="Re-enter Password" />
+            <Input type = 'password' onChange = {setUpdatedPassword} name = "newPass" inputText="Enter New Password"/>
+            <Input type = 'password' onChange = {setReUpdatedPassword} name = "reNewPass" inputText="Re-enter Password" />
             {flagSuccessUpdate && successMessage}
             {lengthError && <LengthNotMatchedErr/>}
             {notMatchedError && <NotMatchedErr/>}
             {errors}
-            <button className="update-password-button">Update Password</button>
+            <button disabled = {isGreyedOut} style = {isGreyedOut ? { color: 'gray' } : {color:'white'}} className="update-password-button">{isGreyedOut ? "Updating Password..." : "Update Password"}</button>
             <Link routes="return" key = "Return to Sign in" to = "/login">Return to Sign in</Link>
         </form>
     )

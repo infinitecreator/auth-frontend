@@ -13,6 +13,8 @@ export default function ForgotPasswordForm() {
     const [seconds, setSeconds ] =  useState(initialSeconds);
     const [visButton, setVisButton] = useState(true) ;
     const [eemail, setEEmail] = useState('') ;
+    const [isGreyedOut, setIsGreyedOut] = useState(false) ;
+    const [isGreyedOut2, setIsGreyedOut2] = useState(false) ;
     const [otp, setOTP] = useState('') ;
     const {navigate} = useNavigation() ;
 
@@ -94,21 +96,32 @@ export default function ForgotPasswordForm() {
         event.preventDefault() ;
 
         try{
+            
+            
 
             const submitType = event.nativeEvent.submitter.name ;
             
 
             switch (submitType){
                 case 'resend':
+                    setIsGreyedOut2(true) ;
                     await doRequest() ;
+                    setIsGreyedOut2(false) ;
+                    
                     break ;
                 case 'submit':
+                    setIsGreyedOut(true) ; 
                     await verifyOtp();
+                    setIsGreyedOut(false) ;
+                    
+                    
                     break  ;
                 default:
                     console.log('none') ;
             }
         } catch(err){
+            setIsGreyedOut(false) ;
+            setIsGreyedOut2(false) ;
             console.log(err) ;
         }
         
@@ -128,9 +141,9 @@ export default function ForgotPasswordForm() {
             <div className="resend-otp">
                 {!visButton && `Resend OTP in ${minutes}:${seconds}`}
             </div>
-            {optCount > 0 && <button value = "submit" name = 'submit' className="submit-button">Submit OTP </button> }
+            {optCount > 0 && <button disabled = {isGreyedOut} style = {isGreyedOut ? { color: 'gray' } : {color:'white'}} value = "submit" name = 'submit' className="submit-button">{isGreyedOut ? "Submitting OTP..." : "Submit OTP"} </button> }
             
-            {visButton && <button value = "resend" name = 'resend' className="main-forgot-password-form-button">{buttonText}</button>}
+            {visButton && <button disabled = {isGreyedOut2} style = {isGreyedOut2 ? { color: 'gray' } : {color:'white'}} value = "resend" name = 'resend' className="main-forgot-password-form-button">{ isGreyedOut2 ? (optCount===0 ? "Sending OTP..." : "Re-sending OTP...") : buttonText }</button>}
         </form>
     )
 
